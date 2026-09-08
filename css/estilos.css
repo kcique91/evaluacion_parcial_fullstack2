@@ -93,6 +93,39 @@ nav a {
     background-color: #1d4f85;
 }
 
+
+/* Sesion activa: cajita con el nombre del usuario (reemplaza "Iniciar sesion") */
+.acciones-usuario .badge-usuario {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+    cursor: default;
+}
+
+/* Sesion activa: boton para cerrar sesion (reemplaza "Registrar usuario") */
+.acciones-usuario .btn-cerrar-sesion {
+    background-color: white;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+.acciones-usuario .btn-cerrar-sesion:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+
+/* Acceso directo al panel de admin (solo se muestra a Administrador/Vendedor) */
+.acciones-usuario .btn-ir-admin {
+    background-color: var(--color-primario);
+    color: white;
+    border: 1px solid var(--color-primario);
+}
+
+.acciones-usuario .btn-ir-admin:hover {
+    background-color: #1d4f85;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
