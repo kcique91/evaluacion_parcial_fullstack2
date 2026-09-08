@@ -156,10 +156,6 @@ img.imagen-producto-grande {
         display: flex;
     }
 }
-    #menu-toggle:checked ~ .acciones-usuario {
-        display: flex;
-    }
-}  <- ESTA ES LA ULTIMA QUE TIENES
 
 /* --- FIX VIDEO NOSOTROS CHILLAN --- */
 .hero-nosotros {
@@ -189,3 +185,19 @@ img.imagen-producto-grande {
   border-radius: 10px;
 }
 
+.contenedor-auth{ display:flex; justify-content:center; padding:40px var(--espacio-md); }
+.auth-card{ background:white; border:1px solid var(--color-primario); border-radius:10px; padding:var(--espacio-md); max-width:450px; width:100%; }
+.auth-header{ text-align:center; margin-bottom:var(--espacio-md); }
+.auth-footer{ text-align:center; margin-top:var(--espacio-md); }
+.form-group{ display:flex; flex-direction:column; gap:6px; margin-bottom:var(--espacio-md); }
+.form-group input, .form-group select, .form-group textarea{ padding:10px; border:1px solid #ccc; border-radius:6px; }
+.btn-block{ width:100%; text-align:center; border:none; cursor:pointer; }
+.mensaje-error{ color:#c0392b; font-size:0.85rem; min-height:1em; }
+.mensaje-alerta{ margin-top:var(--espacio-md); padding:10px; border-radius:6px; text-align:center; display:none; }
+.mensaje-alerta:not(:empty){ display:block; }
+.mensaje-alerta.exito{ background:#e3f7e8; color:#1e7d32; }
+.mensaje-alerta.error{ background:#fdecea; color:#c0392b; }
+.input-valido{ border-color:#1e7d32 !important; }
+.input-invalido{ border-color:#c0392b !important; }
+.carrito-link{ color:var(--color-texto); text-decoration:none; }
+.logo-nombre{ color:var(--color-primario); font-size:1.2rem; }
