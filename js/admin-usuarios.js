@@ -1,19 +1,13 @@
-var usuariosBase = [
-    {run:"11111111-1", nombre:"Admin", apellidos:"Gas El Volcan", correo:"admin@gaselvolcan.cl", pass:"admin123", tipo:"admin", rol:"admin", fecha:"", region:"", comuna:"", direccion:""}
-];
-
-var usuarios = usuariosBase;
+var usuarios = [];
 
 try{
     var g = localStorage.getItem("usuarios");
     if(g!= null){
         var temp = JSON.parse(g);
         if(temp && temp.length > 0) usuarios = temp;
-    } else {
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
     }
 }catch(e){
-    usuarios = usuariosBase;
+    usuarios = [];
 }
 
 function mostrarUsuarios(){
@@ -25,7 +19,7 @@ function mostrarUsuarios(){
         var run = u.run || "-";
         var nombre = (u.nombre || "") + " " + (u.apellidos || "");
         var correo = u.correo || "";
-        var tipo = u.tipo || u.rol || "cliente";
+        var tipo = u.tipoUsuario || "Cliente";
         cuerpo.innerHTML += "<tr><td>"+run+"</td><td>"+nombre.trim()+"</td><td>"+correo+"</td><td>"+tipo+"</td><td><button onclick='editarUsuario("+i+")'>Editar</button> <button onclick='eliminarUsuario("+i+")'>Eliminar</button></td></tr>";
     }
 }
@@ -36,7 +30,7 @@ function editarUsuario(i){
 }
 
 function eliminarUsuario(i){
-    if(usuarios[i].correo == "admin@gaselvolcan.cl"){
+    if(usuarios[i].correo == "admin@duoc.cl"){
         alert("No se puede eliminar admin principal");
         return;
     }

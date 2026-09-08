@@ -78,9 +78,7 @@
                     <label for="region">Región</label>
                     <select id="region" name="region">
                         <option value="">Seleccione Región</option>
-                        <option value="Metropolitana">Metropolitana</option>
-                        <option value="Biobio">Biobío</option>
-                        <option value="Valparaiso">Valparaíso</option>
+                        <option value="Región de Ñuble">Región de Ñuble</option>
                     </select>
                     <span class="error-mensaje" id="errorRegion"></span>
                 </div>
@@ -109,9 +107,7 @@
 
     <script>
         const comunasPorRegion = {
-            Metropolitana: ["Santiago", "Puente Alto", "Maipú", "La Florida"],
-            Biobio: ["Concepción", "Chillán", "Los Ángeles"],
-            Valparaiso: ["Valparaíso", "Viña del Mar", "Quilpué"]
+            "Región de Ñuble": ["Chillán", "Chillán Viejo", "El Carmen", "Pinto", "San Ignacio", "Bulnes", "Quillón"]
         };
 
         document.getElementById("region").addEventListener("change", function () {

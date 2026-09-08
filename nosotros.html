@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribuidora Gas El Volcán - Nosotros</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Distribuidora Gas El Volcán</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+.video-nosotros {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+.video-nosotros video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+.video-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+}
+.video-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.video-text h1 { font-size: 3rem; margin-bottom: 10px; }
+.video-text p { font-size: 1.2rem; }
+.contenido-nosotros {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+.contenido-nosotros img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  display: block;
+  margin: 30px auto;
+}
+  </style>
 </head>
 <body>
 
+    <!-- ENCABEZADO COMPARTIDO -->
     <header>
         <nav>
             <div class="logo">
@@ -16,8 +64,11 @@
                     <span class="logo-nombre" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primario);">Gas El Volcán</span>
                 </a>
             </div>
+
+            <!-- Botón menú hamburguesa para celulares -->
             <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
-            <label for="menu-toggle" class="menu-toggle-btn">☰</label>
+            <label for="menu-toggle" class="menu-toggle-btn">&#9776;</label>
+
             <ul class="menu-principal">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="productos.html">Productos</a></li>
@@ -25,31 +76,61 @@
                 <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
+
             <div class="acciones-usuario">
-                <a href="carrito.html" class="carrito-link">🛒 Cart (<span id="contadorCarrito">0</span>)</a>
+              <a href="login.html">Iniciar sesión</a>
+              <a href="registro.html">Registrar usuario</a>
+              <a href="carrito.html" class="carrito-link">🛒 Cart (<span id="contadorCarrito">0</span>)</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="nosotros-container">
-            <h1>Sobre Nosotros</h1>
-            <p>En Gas El Volcán somos una distribuidora comprometida con llevar energía segura y a tiempo a todos los hogares de Santiago.</p>
-            
-            <h2>Nuestra Misión</h2>
-            <p>Distribuir gas de forma segura, eficiente y con el mejor servicio al cliente.</p>
+  <!-- VIDEO PRINCIPAL -->
+  <section class="video-nosotros">
+    <video autoplay muted loop playsinline>
+      <source src="video/camiones-gas.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="video-text">
+      <h1>Gas El Volcán</h1>
+      <p>Desde 1998 abasteciendo a Chillán y Ñuble</p>
+      <p>2 camiones - 3 repartidores - Entrega el mismo día</p>
+    </div>
+  </section>
 
-            <h2>Nuestra Visión</h2>
-            <p>Ser la distribuidora líder en la Región Metropolitana.</p>
-            <img src="img/carro-gas.jpg" alt="Carro repartidor Gas El Volcán" style="max-width:100%;margin-top:20px;border-radius:8px;">
-        </section>
-    </main>
+  <!-- CONTENIDO -->
+  <main class="contenido-nosotros">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Somos una empresa familiar ubicada en Chillán, Región de Ñuble, fundada en 1998.
+      Distribuimos cilindros de gas licuado a domicilio a clientes residenciales y comerciales
+      en Chillán y comunas aledañas.
+    </p>
+
+    <img src="img/camiones-chillan.jpg" alt="Camiones de Gas El Volcán en Chillán">
+
+    <h3>¿Por qué elegirnos?</h3>
+    <ul>
+      <li>80 a 120 pedidos diarios entregados</li>
+      <li>Cilindros de 5kg, 11kg y 15kg</li>
+      <li>Cobertura Chillán y alrededores</li>
+      <li>Pago contra entrega</li>
+    </ul>
+
+    <h3>Nuestro Compromiso</h3>
+    <p>
+      Pasar del cuaderno a la tecnología para que sepas exactamente cuándo llega tu gas.
+      Sin llamadas perdidas, sin esperas indefinidas.
+    </p>
+  </main>
 
     <footer>
-        <p>&copy; 2026 Gas El Volcán - Todos los derechos reservados</p>
+        <p>&copy; 2026 Gas El Volcán - Chillán, Ñuble</p>
     </footer>
 
     <script src="js/carrito.js"></script>
+    <script src="js/sesion.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

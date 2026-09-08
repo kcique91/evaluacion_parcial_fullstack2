@@ -31,12 +31,99 @@ body {
 .menu-principal {
     list-style: none;
     display: flex;
-    gap: var(--espacio-md);
+    gap: 10px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--color-texto);
+}
+
+/* Botones del menu principal (Home, Productos, Nosotros, etc.) en cajitas */
+.menu-principal a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--color-primario);
+    border-radius: 6px;
+    color: var(--color-primario);
+    font-weight: 500;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu-principal a:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+/* Acciones de usuario (Iniciar sesion / Registrar usuario / Carrito) separadas en cajitas */
+.acciones-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acciones-usuario a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Iniciar sesion: boton contorneado */
+.acciones-usuario a[href="login.html"] {
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    background-color: white;
+}
+
+.acciones-usuario a[href="login.html"]:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+/* Registrar usuario: boton solido, para diferenciarlo de Iniciar sesion */
+.acciones-usuario a[href="registro.html"] {
+    background-color: var(--color-primario);
+    color: white;
+    border: 1px solid var(--color-primario);
+}
+
+.acciones-usuario a[href="registro.html"]:hover {
+    background-color: #1d4f85;
+}
+
+
+/* Sesion activa: cajita con el nombre del usuario (reemplaza "Iniciar sesion") */
+.acciones-usuario .badge-usuario {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+    cursor: default;
+}
+
+/* Sesion activa: boton para cerrar sesion (reemplaza "Registrar usuario") */
+.acciones-usuario .btn-cerrar-sesion {
+    background-color: white;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+.acciones-usuario .btn-cerrar-sesion:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+
+/* Acceso directo al panel de admin (solo se muestra a Administrador/Vendedor) */
+.acciones-usuario .btn-ir-admin {
+    background-color: var(--color-primario);
+    color: white;
+    border: 1px solid var(--color-primario);
+}
+
+.acciones-usuario .btn-ir-admin:hover {
+    background-color: #1d4f85;
 }
 
 nav {
@@ -101,18 +188,6 @@ main {
   font-size: 1rem;
 }
 
-.imagen-producto {
-  font-size: 60px;
-  display: block;
-  margin-bottom: var(--espacio-md);
-}
-
-.imagen-producto-grande {
-  font-size: 100px;
-  display: block;
-  margin-bottom: var(--espacio-md);
-}
-
 img.imagen-producto {
   width: 100%;
   height: 150px;
@@ -169,6 +244,34 @@ img.imagen-producto-grande {
     }
 }
 
+/* --- FIX VIDEO NOSOTROS CHILLAN --- */
+.hero-nosotros {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.hero-nosotros img,
+.hero-nosotros video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.hero-nosotros .contenido-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .contenedor-auth{ display:flex; justify-content:center; padding:40px var(--espacio-md); }
 .auth-card{ background:white; border:1px solid var(--color-primario); border-radius:10px; padding:var(--espacio-md); max-width:450px; width:100%; }
 .auth-header{ text-align:center; margin-bottom:var(--espacio-md); }
@@ -183,5 +286,5 @@ img.imagen-producto-grande {
 .mensaje-alerta.error{ background:#fdecea; color:#c0392b; }
 .input-valido{ border-color:#1e7d32 !important; }
 .input-invalido{ border-color:#c0392b !important; }
-.carrito-link{ color:var(--color-texto); text-decoration:none; }
+.carrito-link{ color:var(--color-texto); text-decoration:none; border:1px solid var(--color-texto); border-radius:6px; padding:8px 16px; display:inline-block; }
 .logo-nombre{ color:var(--color-primario); font-size:1.2rem; }

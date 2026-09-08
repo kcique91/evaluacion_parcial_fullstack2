@@ -140,3 +140,51 @@ form {
 .btn-primario:hover {
   background-color: #334155;
 }
+
+/* Responsive del panel de Administración (RNF-1: probado en 360px, 768px y 1280px) */
+
+/* Tablet: el sidebar se hace más angosto para dejar más espacio al formulario */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 180px;
+    padding: 16px;
+  }
+
+  .admin-main,
+  .admin-contenido {
+    padding: 20px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
+
+/* Celular: el sidebar se apila arriba del contenido en vez de ir al costado */
+@media (max-width: 480px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .admin-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .admin-main,
+  .admin-contenido {
+    padding: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+  }
+}

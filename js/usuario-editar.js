@@ -14,8 +14,8 @@ if (indice === null || !usuarios[indice]) {
     document.getElementById("nombre").value = u.nombre || "";
     document.getElementById("apellidos").value = u.apellidos || "";
     document.getElementById("correo").value = u.correo || "";
-    document.getElementById("fechaNacimiento").value = u.fecha || "";
-    document.getElementById("tipoUsuario").value = u.tipo || "";
+    document.getElementById("fechaNacimiento").value = u.fechaNacimiento || "";
+    document.getElementById("tipoUsuario").value = u.tipoUsuario || "";
     document.getElementById("region").value = u.region || "";
 
     // La comuna depende de la región, así que la cargamos con la función del HTML
@@ -159,15 +159,15 @@ document.getElementById("formUsuarioEditar").addEventListener("submit", function
     usuarios[indice].nombre = document.getElementById("nombre").value.trim();
     usuarios[indice].apellidos = document.getElementById("apellidos").value.trim();
     usuarios[indice].correo = document.getElementById("correo").value.trim().toLowerCase();
-    usuarios[indice].fecha = document.getElementById("fechaNacimiento").value;
-    usuarios[indice].tipo = document.getElementById("tipoUsuario").value;
+    usuarios[indice].fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    usuarios[indice].tipoUsuario = document.getElementById("tipoUsuario").value;
     usuarios[indice].region = document.getElementById("region").value;
     usuarios[indice].comuna = document.getElementById("comuna").value;
     usuarios[indice].direccion = document.getElementById("direccion").value.trim();
 
     const nuevaPassword = document.getElementById("password").value;
     if (nuevaPassword !== "") {
-        usuarios[indice].pass = nuevaPassword;
+        usuarios[indice].password = nuevaPassword;
     }
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));

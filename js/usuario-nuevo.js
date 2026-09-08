@@ -155,9 +155,9 @@ document.getElementById("formUsuarioNuevo").addEventListener("submit", function 
         nombre: document.getElementById("nombre").value.trim(),
         apellidos: document.getElementById("apellidos").value.trim(),
         correo: document.getElementById("correo").value.trim().toLowerCase(),
-        pass: document.getElementById("password").value,
-        fecha: document.getElementById("fechaNacimiento").value,
-        tipo: document.getElementById("tipoUsuario").value,
+        password: document.getElementById("password").value,
+        fechaNacimiento: document.getElementById("fechaNacimiento").value,
+        tipoUsuario: document.getElementById("tipoUsuario").value,
         region: document.getElementById("region").value,
         comuna: document.getElementById("comuna").value,
         direccion: document.getElementById("direccion").value.trim()
