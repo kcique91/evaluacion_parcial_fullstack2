@@ -16,8 +16,8 @@ function mostrarProductosAdmin() {
         <td>$${producto.precioResidencial}</td>
         <td>${producto.stock}</td>
         <td>
-          <button type="button" onclick="editarProducto('${producto.codigo}')">Editar</button>
-          <button type="button" onclick="eliminarProducto('${producto.codigo}')">Eliminar</button>
+          <button type="button" class="btn-editar" onclick="editarProducto('${producto.codigo}')">Editar</button>
+          <button type="button" class="btn-eliminar" onclick="eliminarProducto('${producto.codigo}')">Eliminar</button>
         </td>
       </tr>
     `;

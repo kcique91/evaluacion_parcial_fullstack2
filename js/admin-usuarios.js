@@ -20,7 +20,7 @@ function mostrarUsuarios(){
         var nombre = (u.nombre || "") + " " + (u.apellidos || "");
         var correo = u.correo || "";
         var tipo = u.tipoUsuario || "Cliente";
-        cuerpo.innerHTML += "<tr><td>"+run+"</td><td>"+nombre.trim()+"</td><td>"+correo+"</td><td>"+tipo+"</td><td><button onclick='editarUsuario("+i+")'>Editar</button> <button onclick='eliminarUsuario("+i+")'>Eliminar</button></td></tr>";
+        cuerpo.innerHTML += "<tr><td>"+run+"</td><td>"+nombre.trim()+"</td><td>"+correo+"</td><td>"+tipo+"</td><td><button class='btn-editar' onclick='editarUsuario("+i+")'>Editar</button> <button class='btn-eliminar' onclick='eliminarUsuario("+i+")'>Eliminar</button></td></tr>";
     }
 }
 
